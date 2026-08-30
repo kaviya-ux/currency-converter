@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
 
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 min-h-screen font-sans p-4 sm:p-8">
+
+    <div class="w-full max-w-[600px] mx-auto">
+
+        <!-- HEADER -->
+        <div class="text-center mb-6">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">💱 Currency Converter</h1>
+            <p class="text-gray-500">Live exchange rates for 30+ world currencies.</p>
+        </div>
+
+        <!-- MAIN CARD -->
+        <div class="bg-white p-6 sm:p-[30px] rounded-2xl shadow-lg mb-6">
+
+            <!-- AMOUNT -->
+            <label for="amountInput" class="block text-sm font-medium text-gray-700 mb-2">Amount</label>
+            <input type="number" id="amountInput" value="1" min="0" step="any"
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 outline-none focus:border-blue-600 mb-5">
+
+            <!-- FROM / SWAP / TO -->
+            <div class="flex items-end gap-3 mb-5">
+                <div class="flex-1">
+                    <label for="fromCurrency" class="block text-sm font-medium text-gray-700 mb-2">From</label>
+                    <select id="fromCurrency" class="w-full border border-gray-300 rounded-lg px-3 py-3 text-gray-700 outline-none focus:border-blue-600"></select>
+                </div>
+
+                <button id="swapBtn" onclick="swapCurrencies()" title="Swap currencies"
+                    class="mb-1 w-11 h-11 flex items-center justify-center rounded-lg border border-gray-300 text-gray-500 hover:bg-gray-50 transition-colors flex-shrink-0">
+                    ⇄
+                </button>
+
+                <div class="flex-1">
+                    <label for="toCurrency" class="block text-sm font-medium text-gray-700 mb-2">To</label>
+                    <select id="toCurrency" class="w-full border border-gray-300 rounded-lg px-3 py-3 text-gray-700 outline-none focus:border-blue-600"></select>
+                </div>
+            </div>
+
+            <!-- CONVERT BUTTON -->
+            <button id="convertBtn" onclick="handleConvert()"
+                class="w-full py-3 rounded-lg text-white font-medium bg-blue-600 hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors">
+                Convert
+            </button>
+
+            <!-- ERROR MESSAGE -->
+            <p id="errorMessage" class="hidden text-red-600 text-sm mt-3"></p>
+
+            <!-- LOADING STATE -->
+            <div id="loadingState" class="hidden items-center gap-2 mt-4 text-gray-500 text-sm">
+                <div class="spinner"></div>
+                <span>Fetching latest rates...</span>
+            </div>
+
+            <!-- RESULT -->
+            <div id="resultBox" class="hidden mt-6 pt-6 border-t border-gray-200 text-center">
+                <p id="resultText" class="text-3xl font-bold text-gray-800 mb-1"></p>
+                <p id="rateText" class="text-sm text-gray-500"></p>
+                <p id="rateDate" class="text-xs text-gray-400 mt-1"></p>
+            </div>
+
+        </div>
+
+        <!-- HISTORY -->
+        <div class="bg-white p-6 sm:p-[30px] rounded-2xl shadow-lg">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-semibold text-gray-800">Recent Conversions</h2>
+                <button onclick="clearHistory()" id="clearHistoryBtn"
+                    class="text-sm text-red-600 hover:underline">
+                    Clear All
+                </button>
+            </div>
+
+            <div id="historyEmptyState" class="text-center text-gray-400 text-sm py-6">
+                No conversions yet. Your recent conversions will show up here.
+            </div>
+
+            <div id="historyList" class="flex flex-col gap-2"></div>
+        </div>
+
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
