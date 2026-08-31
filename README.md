@@ -44,19 +44,6 @@ currency-converter/
 └── README.md
 ```
 
-## Running Locally
-
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/kaviya-ux/currency-converter.git
-   ```
-2. Make sure `index.html`, `style.css`, and `script.js` stay in the same folder.
-3. Open `index.html` in your browser.
-
-## A Note on the Free API
-
-This project uses the [Frankfurter API](https://frankfurter.dev/), a free and open-source exchange rate service backed by the European Central Bank. It requires no signup, no API key, and has open CORS support, so it works directly from browser JavaScript with no backend proxy. Rates cover roughly 30 major currencies and update once per business day — it isn't meant for real-time trading, but it's a reliable and well-documented choice for a project like this. If the service is ever briefly unreachable, the app shows a clear error message rather than breaking, and the currency dropdowns keep working off the built-in fallback list either way.
-
 ## Possible Improvements
 
 - Historical rate lookup (Frankfurter supports this out of the box)
