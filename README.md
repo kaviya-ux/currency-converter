@@ -29,7 +29,7 @@ Keep `index.html`, `style.css`, and `script.js` in the same folder and open `ind
 
 ## How It Works
 
-- On page load, the currency dropdowns are populated instantly from a built-in fallback list of 30 major currencies, then upgraded with the live list from Frankfurter's `/currencies` endpoint if it responds successfully. This means the app is always usable immediately, even on a slow connection.
+- On page load, the currency dropdowns are populated instantly from a built-in fallback list of 30 major currencies, then upgraded with the live list from Frankfurter's `/currencies` endpoint if it responds successfully. This means the app is always usable immediately, even on a slow connections.
 - Conversion follows Frankfurter's own recommended pattern: fetch the exchange rate with `?base=FROM&symbols=TO`, then multiply the amount client-side — rather than relying on a server-side "amount" parameter.
 - The result shows the total converted amount, the 1-unit rate, and the date the rate was published (rates update once a day; on weekends/holidays the most recent business day's rate is shown).
 - Every successful conversion is saved as `{ amount, from, convertedAmount, to, createdAt }` in `localStorage` under the key `currency-converter-history`, capped at the 15 most recent entries.
