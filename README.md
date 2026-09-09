@@ -51,8 +51,3 @@ currency-converter/
 - A simple line chart of a currency pair's rate over time
 - Offline-friendly caching of the last fetched rates
 - Dark mode toggle
-
-## License
-
-Free to use for learning or personal projects.
-
