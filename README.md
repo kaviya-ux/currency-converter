@@ -1,4 +1,3 @@
-
 # 💱 Currency Converter
 
 A live currency converter built with HTML, Tailwind CSS, and vanilla JavaScript, split into separate structure, style, and logic files. Convert between 30+ world currencies using real exchange rate data — no API key, no signup, no backend.
