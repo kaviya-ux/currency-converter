@@ -242,12 +242,10 @@ function renderHistory() {
         historyList.appendChild(row);
     });
 }
-
 function clearHistory() {
     localStorage.removeItem(HISTORY_KEY);
     renderHistory();
 }
-
 // ALLOW PRESSING ENTER IN THE AMOUNT FIELD
 amountInput.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
