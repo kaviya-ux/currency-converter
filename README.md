@@ -44,6 +44,7 @@ currency-converter/
 └── README.md
 ```
 
+
 ## Possible Improvements
 
 - Historical rate lookup (Frankfurter supports this out of the box)
