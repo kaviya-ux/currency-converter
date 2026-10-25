@@ -3,20 +3,7 @@
 // API (no API key required, CORS enabled), converting amounts, and keeping
 // a local history of past conversions.
 
-// ELEMENTS
-const amountInput = document.getElementById("amountInput");
-const fromCurrency = document.getElementById("fromCurrency");
-const toCurrency = document.getElementById("toCurrency");
-const swapBtn = document.getElementById("swapBtn");
-const convertBtn = document.getElementById("convertBtn");
-const errorMessage = document.getElementById("errorMessage");
-const loadingState = document.getElementById("loadingState");
-const resultBox = document.getElementById("resultBox");
-const resultText = document.getElementById("resultText");
-const rateText = document.getElementById("rateText");
-const rateDate = document.getElementById("rateDate");
-const historyList = document.getElementById("historyList");
-const historyEmptyState = document.getElementById("historyEmptyState");
+
 
 const HISTORY_KEY = "currency-converter-history";
 const API_BASE = "https://api.frankfurter.dev/v1";
